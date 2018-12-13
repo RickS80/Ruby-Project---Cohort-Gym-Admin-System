@@ -15,8 +15,8 @@ CREATE TABLE gymclasses(
   gymclass_name VARCHAR(255),
   instructor VARCHAR(255),
   capacity INT8,
-  start_time TIMESTAMP,
-  end_time TIMESTAMP
+  start_time VARCHAR(255),
+  end_time VARCHAR(255)
 );
 
 CREATE TABLE bookedclasses(
