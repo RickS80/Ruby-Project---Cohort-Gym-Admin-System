@@ -14,7 +14,23 @@ member1 = Member.new({
   "membership_category" => "Premium"
   })
 
+member2 = Member.new({
+  "name" => "Midori Symington",
+  "age" => 38,
+  "gender" => "F",
+  "membership_category" => "Basic"
+  })
+
+member3 = Member.new({
+  "name" => "Granny",
+  "age" => 100,
+  "gender" => "M",
+  "membership_category" => "Basic"
+  })
+
 member1.save()
+member2.save()
+member3.save()
 
 gymclass1 = GymClass.new({
   "gymclass_name" => "Bodypump",
@@ -59,8 +75,15 @@ bookedclass3 = BookedClass.new({
   "gymclass_id" => gymclass3.id
   })
 
+bookedclass4 = BookedClass.new({
+  "member_id" => member2.id,
+  "gymclass_id" => gymclass1.id
+  })
+
 bookedclass1.save()
 bookedclass2.save()
 bookedclass3.save()
+bookedclass4.save()
 
-p member1.gymclasses()
+# p member1.gymclasses()
+p gymclass1.members
