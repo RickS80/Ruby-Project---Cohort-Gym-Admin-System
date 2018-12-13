@@ -39,7 +39,6 @@ class Member
     return Member.new( results.first )
   end
 
-
   def self.delete_all()
     sql = "DELETE FROM members"
     SqlRunner.run( sql )

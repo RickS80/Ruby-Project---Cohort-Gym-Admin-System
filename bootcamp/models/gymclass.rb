@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require_relative('member')
 
 class GymClass
   attr_reader :id
