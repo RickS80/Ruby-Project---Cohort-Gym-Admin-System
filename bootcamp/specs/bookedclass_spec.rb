@@ -6,9 +6,17 @@ require_relative('../models/member.rb')
 
 class TestBookedClass < Minitest::Test
 
-  # def setup
-  #   @member_id =
-  #   @gymclass_id =
+  # def test_attendees
+  #   bookedclass1 = BookedClass.new({
+  #     "member_id" => "kevin",
+  #     "gymclass_id" => 2
+  #     })
+  #   bookedclass2 = BookedClass.new({
+  #     "member_id" => "sara",
+  #     "gymclass_id" => 3
+  #     })
+  #   BookedClass.attendees
+  #   assert_equal(2, )
   # end
 
 

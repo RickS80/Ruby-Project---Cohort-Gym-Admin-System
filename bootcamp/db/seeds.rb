@@ -36,24 +36,24 @@ gymclass1 = GymClass.new({
   "gymclass_name" => "Bodypump",
   "instructor" => "Gary",
   "capacity" => 5,
-  "start_time" => "10:30",
-  "end_time" => "11:30"
+  "start_time" => "2018-12-20 10:30:00",
+  "end_time" => "2018-12-20 11:30:00"
   })
 
 gymclass2 = GymClass.new({
   "gymclass_name" => "Spin",
   "instructor" => "Gary",
   "capacity" => 5,
-  "start_time" => "10:30",
-  "end_time" => "11:30"
+  "start_time" => "2018-12-20 13:30:00",
+  "end_time" => "2018-12-20 14:30:00"
   })
 
 gymclass3 = GymClass.new({
   "gymclass_name" => "Individual",
   "instructor" => "Gary",
   "capacity" => 1,
-  "start_time" => "10:30",
-  "end_time" => "11:30"
+  "start_time" => "2018-12-20 14:30:00",
+  "end_time" => "2018-12-20 15:30:00"
   })
 
 gymclass1.save()

@@ -48,6 +48,8 @@ attr_reader :id, :member_id, :gymclass_id
   end
 
 
+
+
   def self.delete_all()
     sql = "DELETE FROM bookedclasses"
     SqlRunner.run( sql )
@@ -66,6 +68,10 @@ attr_reader :id, :member_id, :gymclass_id
 
   def gym_class_name
     GymClass.find(@gymclass_id).gymclass_name
+  end
+
+  def attendees
+    BookedClass.all.count
   end
 
 end

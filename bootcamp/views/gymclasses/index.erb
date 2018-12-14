@@ -7,14 +7,15 @@
     <th>Class</th>
     <th>Capacity</th>
     <th>Instructor</th>
+    <th>Start Time</th>
   </tr>
   <% for gymclass in @gymclasses %>
   <tr>
     <td><a href="/gymclasses/<%= gymclass.id %>"><%= gymclass.gymclass_name %></a></td>
 
     <td align = "center"><%= gymclass.capacity %></td>
-    <td align = "center"><%= gymclass.instructor %></td></td>
-
+    <td align = "center"><%= gymclass.instructor %></td>
+    <td align = "center"><%= gymclass.start_time %></td>
   </tr>
 
   <% end %>
