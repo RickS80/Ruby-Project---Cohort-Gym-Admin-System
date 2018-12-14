@@ -1,16 +1,19 @@
-<h1>Gym Classes</h1>
+<h2>Gym Classes</h2>
+<hr>
 
 <table>
   <tr>
     <th>Class</th>
     <th></th>
     <th>Capacity</th>
+    <th>Instructor</th>
   </tr>
   <% for gymclass in @gymclasses %>
   <tr>
     <td><a href="/gymclasses/<%= gymclass.id %>"><%= gymclass.gymclass_name %></a></td>
-    
+
     <td><%= gymclass.capacity %></td>
+    <td><%= gymclass.instructor %></td></td>
 
   </tr>
 
@@ -18,8 +21,11 @@
 </table>
 
 <br>
-<hr>
+
+<a href="/bookedclasses/new">Book a class!</a>
+
 <br>
+<hr>
 
-
+<h3>Admin</h3>
 <a href="/gymclasses/new">Create a new gym class</a>

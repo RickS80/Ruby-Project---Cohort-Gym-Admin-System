@@ -24,7 +24,7 @@ member2 = Member.new({
 member3 = Member.new({
   "name" => "Granny",
   "age" => 100,
-  "gender" => "Male",
+  "gender" => "Female",
   "membership_category" => "Basic"
   })
 
