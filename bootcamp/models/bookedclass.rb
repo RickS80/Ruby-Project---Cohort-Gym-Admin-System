@@ -24,6 +24,15 @@ attr_reader :id, :member_id, :gymclass_id
     @id = results.first()['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE bookedclasses SET
+    (member_id, gymclass_id)
+    = ($1, $2)
+    WHERE id = $3"
+    values = [@member_id, @gymclass_id, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.all()
     sql = "SELECT * FROM bookedclasses"
     results = SqlRunner.run( sql )
@@ -44,12 +53,13 @@ attr_reader :id, :member_id, :gymclass_id
     SqlRunner.run( sql )
   end
 
-  def self.delete(id)
+  def delete()
     sql = "DELETE FROM bookedclasses
     WHERE id = $1"
-    values = [id]
+    values = [@id]
     SqlRunner.run( sql, values )
   end
 
+  
 
 end

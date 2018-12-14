@@ -13,3 +13,7 @@
   <li><%= member.name %></li>
   <% end %>
 </ul>
+
+<a href="/gymclasses/<%= @gymclass.id %>/edit">Edit Class Details</a>
+<hr>
+<form action="/gymclasses/<%= @gymclass.id %>/delete" method="POST"><input type="submit" value="Cancel Class"></form>

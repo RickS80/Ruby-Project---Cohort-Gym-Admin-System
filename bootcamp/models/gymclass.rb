@@ -25,6 +25,15 @@ class GymClass
     @id = results.first()['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE gymclasses SET
+    (gymclass_name, instructor, capacity, start_time, end_time)
+    = ($1, $2, $3, $4, $5)
+    WHERE id = $6"
+    values = [@gymclass_name, @instructor, @capacity, @start_time, @end_time, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.all()
     sql = "SELECT * FROM gymclasses"
     results = SqlRunner.run( sql )
@@ -45,10 +54,10 @@ class GymClass
     SqlRunner.run( sql )
   end
 
-  def self.delete(id)
+  def delete()
     sql = "DELETE FROM gymclasses
     WHERE id = $1"
-    values = [id]
+    values = [@id]
     SqlRunner.run( sql, values )
   end
 
@@ -63,7 +72,7 @@ class GymClass
     user_data.map {|member| Member.new(member)}
   end
 
-  
+
 
 
 end

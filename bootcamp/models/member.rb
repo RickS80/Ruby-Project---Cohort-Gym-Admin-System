@@ -1,5 +1,6 @@
 require_relative('../db/sql_runner')
 require_relative('gymclass')
+require_relative('bookedclass')
 
 class Member
 
@@ -70,6 +71,8 @@ class Member
     user_data = SqlRunner.run(sql, values)
     user_data.map {|gymclass| GymClass.new(gymclass)}
   end
+
+
 
 
 end
