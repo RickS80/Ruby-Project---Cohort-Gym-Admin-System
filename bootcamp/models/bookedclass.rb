@@ -60,6 +60,12 @@ attr_reader :id, :member_id, :gymclass_id
     SqlRunner.run( sql, values )
   end
 
-  
+  def member_name
+    Member.find(@member_id).name
+  end
+
+  def gym_class_name
+    GymClass.find(@gymclass_id).gymclass_name
+  end
 
 end

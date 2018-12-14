@@ -1,0 +1,15 @@
+<h1>Booked Classes</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Class</th>
+  </tr>
+  <% for bookedclass in @bookedclasses %>
+  <tr>
+    <td><%= bookedclass.member_name%></td>
+    <td><%= bookedclass.gym_class_name%></td>
+  </tr>
+  <% end %>
+</table>
