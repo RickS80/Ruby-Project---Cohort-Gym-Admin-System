@@ -5,11 +5,13 @@
     <th>Name</th>
     <th></th>
     <th>Class</th>
+    <th>Cancel Class</th>
   </tr>
   <% for bookedclass in @bookedclasses %>
   <tr>
     <td><%= bookedclass.member_name%></td>
     <td><%= bookedclass.gym_class_name%></td>
+    <td><form action="/bookedclasses/<%= bookedclass.id %>/delete" method="POST"><input type="submit" value="Cancel Class"></form></td>
   </tr>
   <% end %>
 </table>

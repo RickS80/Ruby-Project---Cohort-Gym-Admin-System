@@ -1,1 +1,24 @@
 <form method="post" action="/bookedclasses">
+
+  <label for="member_select">Select Member:</label>
+  <select name="member_select" id="member_select">
+    <% @members.each do |member| %>
+      <option value=<%= member.id %>><%= member.name %></option>
+    <% end %>
+  </select>
+
+<br>
+<br>
+
+  <label for="class_select">Select Class:</label>
+  <select name="class_select" id="class_select">
+    <% @gymclasses.each do |gymclass| %>
+      <option value=<%= gymclass.id %>><%= gymclass.gymclass_name %></option>
+    <% end %>
+  </select>
+
+  <br>
+  <br>
+    <input type="submit" value="Book Class!">
+
+  </form>

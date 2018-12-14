@@ -13,3 +13,21 @@ get '/bookedclasses' do
   @gymclasses = GymClass.all()
   erb ( :"bookedclasses/index" )
 end
+
+get '/bookedclasses/new' do
+  @members = Member.all()
+  @gymclasses = GymClass.all()
+  erb(:"bookedclasses/new")
+end
+
+post '/bookedclasses' do # create
+  @newclass = BookedClass.new( params )
+  @newclass.save()
+  erb( :"gymclasses/create" )
+end
+
+post '/bookedclasses/:id/delete' do
+  booking = BookedClass.find(params['id'])
+  booking.delete
+  redirect to '/bookedclasses'
+end

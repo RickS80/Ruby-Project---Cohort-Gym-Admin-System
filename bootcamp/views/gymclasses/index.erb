@@ -9,9 +9,9 @@
   <% for gymclass in @gymclasses %>
   <tr>
     <td><a href="/gymclasses/<%= gymclass.id %>"><%= gymclass.gymclass_name %></a></td>
-    <td>|</td>
+    
     <td><%= gymclass.capacity %></td>
-      
+
   </tr>
 
   <% end %>
