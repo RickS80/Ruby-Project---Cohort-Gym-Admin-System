@@ -25,6 +25,15 @@ class Member
     @id = results.first()['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE members SET
+    (name, age, gender, membership_category)
+    = ($1, $2, $3, $4)
+    WHERE id = $5"
+    values = [@name, @age, @gender, @membership_category, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.all()
     sql = "SELECT * FROM members"
     results = SqlRunner.run( sql )
@@ -44,10 +53,10 @@ class Member
     SqlRunner.run( sql )
   end
 
-  def self.delete(id)
+  def delete()
     sql = "DELETE FROM members
     WHERE id = $1"
-    values = [id]
+    values = [@id]
     SqlRunner.run( sql, values )
   end
 

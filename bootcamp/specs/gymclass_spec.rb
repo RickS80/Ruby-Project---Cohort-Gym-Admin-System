@@ -26,7 +26,9 @@ class TestGymClass < Minitest::Test
 
   def test_capacity
     assert_equal(5, @gymclass.capacity)
-  end 
+  end
+
+  # def test_gymclass_has_members
   #
   # def test_start_time
   # end

@@ -1,0 +1,15 @@
+<h1> Gym Class: <%= @gymclass.gymclass_name %></h1>
+
+<p>Instructor: <%= @gymclass.instructor %></p>
+<p>Capacity: <%= @gymclass.capacity %></p>
+<p>Start Time: <%= @gymclass.start_time %></p>
+<p>End Time: <%= @gymclass.end_time %></p>
+
+
+<h3>Members Booked on Class:</h3>
+
+<ul>
+  <% @gymclass.members.each do |member| %>
+  <li><%= member.name %></li>
+  <% end %>
+</ul>

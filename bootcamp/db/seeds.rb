@@ -10,21 +10,21 @@ GymClass.delete_all
 member1 = Member.new({
   "name" => "Rick Symington",
   "age" => 38,
-  "gender" => "M",
+  "gender" => "Male",
   "membership_category" => "Premium"
   })
 
 member2 = Member.new({
   "name" => "Midori Symington",
   "age" => 38,
-  "gender" => "F",
+  "gender" => "Female",
   "membership_category" => "Basic"
   })
 
 member3 = Member.new({
   "name" => "Granny",
   "age" => 100,
-  "gender" => "M",
+  "gender" => "Male",
   "membership_category" => "Basic"
   })
 
@@ -86,4 +86,4 @@ bookedclass3.save()
 bookedclass4.save()
 
 # p member1.gymclasses()
-p gymclass1.members
+# p gymclass1.members

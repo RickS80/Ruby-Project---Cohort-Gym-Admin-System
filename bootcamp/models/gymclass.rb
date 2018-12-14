@@ -63,6 +63,7 @@ class GymClass
     user_data.map {|member| Member.new(member)}
   end
 
+  
 
 
 end

@@ -6,8 +6,10 @@ require_relative('../models/member.rb')
 
 class TestBookedClass < Minitest::Test
 
-  def setup
-  end
-  
+  # def setup
+  #   @member_id =
+  #   @gymclass_id =
+  # end
+
 
 end
