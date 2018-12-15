@@ -5,11 +5,12 @@ require_relative('bookedclass')
 class Member
 
   attr_reader :id
-  attr_accessor :name, :age, :gender, :membership_category
+  attr_accessor :first_name, :last_name, :age, :gender, :membership_category
 
   def initialize (options)
     @id = options['id'].to_i if options['id']
-    @name = options['name']
+    @first_name = options['first_name']
+    @last_name = options['last_name']
     @age = options['age'].to_i
     @gender = options['gender']
     @membership_category = options['membership_category']
@@ -17,21 +18,21 @@ class Member
 
   def save()
     sql = "INSERT INTO members
-    (name, age, gender, membership_category)
+    (first_name, last_name, age, gender, membership_category)
     VALUES
-    ($1, $2, $3, $4)
+    ($1, $2, $3, $4, $5)
     RETURNING id"
-    values = [@name, @age, @gender, @membership_category]
+    values = [@first_name, @last_name, @age, @gender, @membership_category]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
 
   def update()
     sql = "UPDATE members SET
-    (name, age, gender, membership_category)
-    = ($1, $2, $3, $4)
-    WHERE id = $5"
-    values = [@name, @age, @gender, @membership_category, @id]
+    (first_name, last_name, age, gender, membership_category)
+    = ($1, $2, $3, $4, $5)
+    WHERE id = $6"
+    values = [@first_name, @last_name, @age, @gender, @membership_category, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -70,6 +71,10 @@ class Member
     values = [@id]
     user_data = SqlRunner.run(sql, values)
     user_data.map {|gymclass| GymClass.new(gymclass)}
+  end
+
+  def name()
+    [@first_name, @last_name].join(' ').squeeze(' ')
   end
 
 

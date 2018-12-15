@@ -8,21 +8,24 @@ Member.delete_all
 GymClass.delete_all
 
 member1 = Member.new({
-  "name" => "Rick Symington",
+  "first_name" => "Rick",
+  "last_name" => "Symington",
   "age" => 38,
   "gender" => "Male",
   "membership_category" => "Premium"
   })
 
 member2 = Member.new({
-  "name" => "Midori Symington",
+  "first_name" => "Midori",
+  "last_name" => "Symington",
   "age" => 38,
   "gender" => "Female",
   "membership_category" => "Basic"
   })
 
 member3 = Member.new({
-  "name" => "Granny",
+  "first_name" => "Darth",
+  "last_name" => "Vadar",
   "age" => 100,
   "gender" => "Female",
   "membership_category" => "Basic"
@@ -34,26 +37,29 @@ member3.save()
 
 gymclass1 = GymClass.new({
   "gymclass_name" => "Bodypump",
-  "instructor" => "Gary",
+  "instructor" => "Colin",
   "capacity" => 5,
   "start_time" => "2018-12-20 10:30:00",
-  "end_time" => "2018-12-20 11:30:00"
+  "end_time" => "2018-12-20 11:30:00",
+  "member_tier" => "Premium"
   })
 
 gymclass2 = GymClass.new({
   "gymclass_name" => "Spin",
-  "instructor" => "Gary",
+  "instructor" => "Alex",
   "capacity" => 5,
   "start_time" => "2018-12-20 13:30:00",
-  "end_time" => "2018-12-20 14:30:00"
+  "end_time" => "2018-12-20 14:30:00",
+  "member_tier" => "Premium"
   })
 
 gymclass3 = GymClass.new({
   "gymclass_name" => "Individual",
-  "instructor" => "Gary",
+  "instructor" => "Del",
   "capacity" => 1,
   "start_time" => "2018-12-20 14:30:00",
-  "end_time" => "2018-12-20 15:30:00"
+  "end_time" => "2018-12-20 15:30:00",
+  "member_tier" => "Basic"
   })
 
 gymclass1.save()
@@ -84,6 +90,11 @@ bookedclass1.save()
 bookedclass2.save()
 bookedclass3.save()
 bookedclass4.save()
+
+binding.pry
+bookedclass1.attendees
+
+nil
 
 # p member1.gymclasses()
 # p gymclass1.members

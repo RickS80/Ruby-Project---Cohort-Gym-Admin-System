@@ -8,14 +8,15 @@
     <th>Capacity</th>
     <th>Instructor</th>
     <th>Start Time</th>
+    <th>Membership Tier</th>
   </tr>
   <% for gymclass in @gymclasses %>
   <tr>
     <td><a href="/gymclasses/<%= gymclass.id %>"><%= gymclass.gymclass_name %></a></td>
-
     <td align = "center"><%= gymclass.capacity %></td>
     <td align = "center"><%= gymclass.instructor %></td>
     <td align = "center"><%= gymclass.start_time %></td>
+    <td align = "center"><%= gymclass.member_tier %></td>
   </tr>
 
   <% end %>

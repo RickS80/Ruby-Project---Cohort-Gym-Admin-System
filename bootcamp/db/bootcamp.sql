@@ -4,7 +4,8 @@ DROP TABLE gymclasses;
 
 CREATE TABLE members (
   id SERIAL8 primary key,
-  name VARCHAR(255),
+  first_name VARCHAR(255),
+  last_name VARCHAR(255),
   age INT2,
   gender VARCHAR(255),
   membership_category VARCHAR(255)
@@ -16,7 +17,8 @@ CREATE TABLE gymclasses(
   instructor VARCHAR(255),
   capacity INT8,
   start_time TIMESTAMP,
-  end_time TIMESTAMP
+  end_time TIMESTAMP,
+  member_tier VARCHAR(255)
 );
 
 CREATE TABLE bookedclasses(

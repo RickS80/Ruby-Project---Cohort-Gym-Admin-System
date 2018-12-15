@@ -6,11 +6,13 @@
 <label for="gymclass_name">Name:</label>
   <input
   type="text" name="gymclass_name"id="gymclass_name" value ="<%= @gymclass.gymclass_name%>" />
-<br>
-<br>
-<label for="instructor">Instructor:</label>
-  <input
-  type="text" name="instructor"id="abc" value ="<%= @gymclass.instructor%>"/>
+<label for="instructor_select">Instructor:</label>
+<select type="text" name="instructor" id ="instructor">>
+<option value="Alex">Alex</option>
+<option value="Colin">Colin</option>
+<option value="Del">Del</option>
+<option value="Sian">Sian</option>
+</select>
 <br>
 <br>
   <label for="capacity">Capacity:</label>
@@ -25,6 +27,10 @@
   <input type="text" name="end_time" id="end_time" value ="<%= @gymclass.end_time%>"/>
 <br>
 <br>
+<label for="member_tier">Gender:</label>
+
+  <input type="radio" name="member_tier" value="Premium" <%="checked" if @gymclass.member_tier == "Premium" %>> Premium
+  <input type="radio" name="member_tier" value="Basic"<%="checked" if @gymclass.member_tier == "Basic" %>> Basic
 <br>
   <input type="submit" value="Submit updated class details">
 

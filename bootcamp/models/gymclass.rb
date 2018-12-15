@@ -3,7 +3,7 @@ require_relative('member')
 
 class GymClass
   attr_reader :id
-  attr_accessor :gymclass_name, :instructor, :capacity, :start_time, :end_time
+  attr_accessor :gymclass_name, :instructor, :capacity, :start_time, :end_time, :member_tier
 
   def initialize (options)
     @id = options['id'].to_i if options['id']
@@ -12,25 +12,26 @@ class GymClass
     @capacity = options['capacity'].to_i
     @start_time = options['start_time']
     @end_time = options['end_time']
+    @member_tier = options['member_tier']
   end
 
   def save()
     sql = "INSERT INTO gymclasses
-    (gymclass_name, instructor, capacity, start_time, end_time)
+    (gymclass_name, instructor, capacity, start_time, end_time, member_tier)
     VALUES
-    ($1, $2, $3, $4, $5)
+    ($1, $2, $3, $4, $5, $6)
     RETURNING id"
-    values = [@gymclass_name, @instructor, @capacity, @start_time, @end_time]
+    values = [@gymclass_name, @instructor, @capacity, @start_time, @end_time, @member_tier]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
 
   def update()
     sql = "UPDATE gymclasses SET
-    (gymclass_name, instructor, capacity, start_time, end_time)
-    = ($1, $2, $3, $4, $5)
-    WHERE id = $6"
-    values = [@gymclass_name, @instructor, @capacity, @start_time, @end_time, @id]
+    (gymclass_name, instructor, capacity, start_time, end_time, member_tier)
+    = ($1, $2, $3, $4, $5, $6)
+    WHERE id = $7"
+    values = [@gymclass_name, @instructor, @capacity, @start_time, @end_time, @member_tier, @id]
     SqlRunner.run(sql, values)
   end
 
