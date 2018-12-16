@@ -26,7 +26,39 @@
 
 <br>
 
-<a href="/bookedclasses/new">Book a class!</a>
+<form method="post" action="/bookedclasses">
+
+<hr>
+  <h2>Booking</h2>
+  <hr>
+
+  <label for="member_select">Member:</label>
+    <select
+    type="number" name="member_id" id="member_id"
+    <% @members.each do |member| %>
+    <option value="<%= member.id%>"> <%= member.name%></option>
+    <%end%>
+    </select>
+  <br>
+  <br>
+
+    <label for="gym_select">Gym Class:</label>
+      <select
+      type="number" name="gymclass_id" id="gymclass_id"
+      <% @gymclasses.each do |gymclass| %>
+      <option value="<%= gymclass.id%>"> <%= gymclass.gymclass_name%> <%=  gymclass.start_time%></option>
+      <%end%>
+      </select>
+
+
+<br>
+<br>
+    <input type="submit" value="Book Class!">
+
+  </form>
+
+  
+
 
 <br>
 <hr>

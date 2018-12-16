@@ -8,6 +8,8 @@ also_reload( '../models/*' )
 
 get '/gymclasses' do
   @gymclasses = GymClass.all()
+  @bookedclasses = BookedClass.all()
+  @members = Member.all()
   erb ( :"gymclasses/index" )
 end
 
