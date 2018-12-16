@@ -71,8 +71,12 @@ attr_reader :id, :member_id, :gymclass_id
     GymClass.find(@gymclass_id).start_time
   end
 
-  def attendees
-    
+  def self.attendees(gymclass_id )
+    sql = "SELECT * FROM bookedclasses
+    WHERE gymclass_id = $1"
+    values = [gymclass_id]
+    results = SqlRunner.run( sql, values )
+    results.count
   end
 
 end

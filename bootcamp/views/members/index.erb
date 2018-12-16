@@ -10,9 +10,8 @@
   </tr>
   <% for member in @members %>
   <tr>
-    <td left = "center"><a href="/members/<%= member.id %>"><%= member.name %></a></td>
-
-    <td align = "center"><%= member.membership_category %></td>
+      <td left = "center"><a href="/members/<%= member.id %>"><%= member.name %></a></td>
+      <td align = "center"><%= member.membership_category %></td>
   </tr>
   <% end %>
 </table>

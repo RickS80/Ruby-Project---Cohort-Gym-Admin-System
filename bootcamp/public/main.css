@@ -1,19 +1,47 @@
 /* DISPLAY TYPES */
-body, html {
+/* body, html {
   height: 100%;
-}
+} */
 
-.bg {
+/* .bg { */
   /* The image used */
-  background-image: url('images/Exercise.jpg')
+  /* background-image: url('images/Exercise.jpg') */
 
   /* Full height */
-  height: 100%;
+  /* height: 100%; */
 
   /* Center and scale the image nicely */
-  background-position: center;
+  /* background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
+/* } */
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: red;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
 }
 
 
