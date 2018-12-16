@@ -12,11 +12,18 @@
 
 <h3>Classes Booked:</h3>
 
-<ul>
-  <% @member.gymclasses.each do |gymclass| %>
-  <li><%= gymclass.gymclass_name %></li>
-  <% end %>
-</ul>
+<table>
+  <tr>
+    <th>Class</th>
+    <th>Time</th>
+  </tr>
+    <% @member.gymclasses.each do |gymclass| %>
+  <tr>
+    <td> <%= gymclass.gymclass_name %></td>
+    <td> <%= gymclass.start_time %></td>
+  </tr>
+    <% end %>
+</table>
 
 <hr>
 

@@ -91,8 +91,8 @@ bookedclass2.save()
 bookedclass3.save()
 bookedclass4.save()
 
-binding.pry
-bookedclass1.attendees
+# binding.pry
+# bookedclass1.attendees
 
 nil
 
