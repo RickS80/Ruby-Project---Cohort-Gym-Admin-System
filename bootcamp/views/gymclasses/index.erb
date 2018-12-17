@@ -10,15 +10,19 @@
     <th>Instructor</th>
     <th>Start Time</th>
     <th>Membership Tier</th>
+    <th>Bookings</th>
   </tr>
   <% for gymclass in @gymclasses %>
   <tr>
-    <td><a href="/gymclasses/<%= gymclass.id %>"><%= gymclass.gymclass_name %></a></td>
+    <td align = "center"><%= gymclass.gymclass_name %></td>
     <td align = "center"><%= gymclass.capacity %></td>
     <td align = "center"><%= gymclass.capacity - BookedClass.attendees(gymclass.id) %></td>
     <td align = "center"><%= gymclass.instructor %></td>
     <td align = "center"><%= gymclass.start_time %></td>
     <td align = "center"><%= gymclass.member_tier %></td>
+    <td><form action="/gymclasses/<%= gymclass.id %>"><input type="submit" value="Class Details"></form></td>
+
+
   </tr>
 
   <% end %>
@@ -57,13 +61,12 @@
 
   </form>
 
-  
+
 
 
 <br>
 <hr>
 
 <h3>Admin</h3>
-<a href="/gymclasses/new">Create a new gym class</a>
-
+<form action="/gymclasses/new"><input type="submit" value="Create a new gym class"></form>
 <hr>

@@ -5,13 +5,14 @@
 <table>
   <tr>
     <th>Name</th>
-
     <th>Membership Type</th>
+    <th>Membership Details</th>
   </tr>
   <% for member in @members %>
   <tr>
-      <td left = "center"><a href="/members/<%= member.id %>"><%= member.name %></a></td>
+      <td left = "center"><%= member.name %></td>
       <td align = "center"><%= member.membership_category %></td>
+      <td align = "center"><form action="/members/<%= member.id %>"><input type="submit" value="Member Details"></form></td>
   </tr>
   <% end %>
 </table>

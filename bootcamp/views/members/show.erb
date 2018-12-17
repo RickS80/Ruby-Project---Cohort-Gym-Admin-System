@@ -4,9 +4,10 @@
 <p>Gender: <%= @member.gender %></p>
 <p>Age: <%= @member.age %></p>
 <p>Membership Category: <%= @member.membership_category %></p>
-<br>
 
-<a href="/members/<%= @member.id %>/edit">Edit Membership Details</a>
+
+<form action="/members/<%= @member.id %>/edit"><input type="submit" value="Edit Membership"></form>
+
 
 <hr>
 
