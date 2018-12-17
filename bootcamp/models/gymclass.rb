@@ -16,14 +16,14 @@ class GymClass
   end
 
   def save()
-    sql = "INSERT INTO gymclasses
-    (gymclass_name, instructor, capacity, start_time, end_time, member_tier)
-    VALUES
-    ($1, $2, $3, $4, $5, $6)
-    RETURNING id"
-    values = [@gymclass_name, @instructor, @capacity, @start_time, @end_time, @member_tier]
-    results = SqlRunner.run(sql, values)
-    @id = results.first()['id'].to_i
+      sql = "INSERT INTO gymclasses
+      (gymclass_name, instructor, capacity, start_time, end_time, member_tier)
+      VALUES
+      ($1, $2, $3, $4, $5, $6)
+      RETURNING id"
+      values = [@gymclass_name, @instructor, @capacity, @start_time, @end_time, @member_tier]
+      results = SqlRunner.run(sql, values)
+      @id = results.first()['id'].to_i
   end
 
   def update()

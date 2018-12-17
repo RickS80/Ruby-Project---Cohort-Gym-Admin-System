@@ -6,6 +6,11 @@ require_relative('../models/member.rb')
 
 class TestBookedClass < Minitest::Test
 
+
+# def test_bookedclass_has_tier
+#   bookedclass1 = BookedClass.new(14, 14)
+#   bookedclass1.
+# end
   # def test_attendees
   #   bookedclass1 = BookedClass.new({
   #     "member_id" => "kevin",

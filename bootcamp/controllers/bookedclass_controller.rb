@@ -21,9 +21,16 @@ get '/bookedclasses/new' do
 end
 
 post '/bookedclasses' do # create
+  
   @newclass = BookedClass.new( params )
-  @newclass.save()
-  redirect to '/bookedclasses'
+    if @newclass.check_membership_tier == true && @newclass.check_availability == true
+      @newclass.save()
+      redirect to '/bookedclasses'
+    elsif @newclass.check_membership_tier == true && @newclass.check_availability == false
+      erb(:"bookedclasses/insufficient_space")
+    else
+      erb(:"bookedclasses/tier_mismatch")
+  end
 end
 
 post '/bookedclasses/:id/delete' do

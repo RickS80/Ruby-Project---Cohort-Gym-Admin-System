@@ -20,9 +20,8 @@ h2, h3, label, p {
   color: white;
 }
 
-.radioDiv {
-  color:white; 
-}
+.radioDiv input {
+  color:blue; }
 
 th {
   background-color: #4CAF50;

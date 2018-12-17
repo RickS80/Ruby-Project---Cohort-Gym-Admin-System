@@ -8,7 +8,7 @@
 
   <label for="member_select">Member:</label>
     <select
-    type="number" name="member_id" id="member_id"
+    type="number" name="member_id" id="member_id">
     <% @members.each do |member| %>
     <option value="<%= member.id%>"> <%= member.name%></option>
     <%end%>
@@ -18,7 +18,7 @@
 
     <label for="gym_select">Gym Class:</label>
       <select
-      type="number" name="gymclass_id" id="gymclass_id"
+      type="number" name="gymclass_id" id="gymclass_id">
       <% @gymclasses.each do |gymclass| %>
       <option value="<%= gymclass.id%>"> <%= gymclass.gymclass_name%></option>
       <%end%>
