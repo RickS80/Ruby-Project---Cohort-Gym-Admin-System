@@ -10,6 +10,7 @@ get '/gymclasses' do
   @gymclasses = GymClass.all()
   @bookedclasses = BookedClass.all()
   @members = Member.all()
+  # binding.pry
   erb ( :"gymclasses/index" )
 end
 
@@ -25,7 +26,7 @@ end
 post '/gymclasses' do # create
   @gymclass = GymClass.new( params )
   @gymclass.save()
-  erb( :"gymclasses/create" )
+  redirect to '/gymclasses'
 end
 
 get '/gymclasses/:id/edit' do

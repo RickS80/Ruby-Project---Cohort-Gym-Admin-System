@@ -67,23 +67,23 @@ gymclass2.save()
 gymclass3.save()
 
 bookedclass1 = BookedClass.new({
-  "member_id" => member1.id,
-  "gymclass_id" => gymclass1.id
+  "member_id" => member2.id,
+  "gymclass_id" => gymclass2.id
   })
 
 bookedclass2 = BookedClass.new({
-  "member_id" => member1.id,
+  "member_id" => member2.id,
   "gymclass_id" => gymclass2.id
   })
 
 bookedclass3 = BookedClass.new({
-  "member_id" => member1.id,
+  "member_id" => member2.id,
   "gymclass_id" => gymclass3.id
   })
 
 bookedclass4 = BookedClass.new({
   "member_id" => member2.id,
-  "gymclass_id" => gymclass1.id
+  "gymclass_id" => gymclass2.id
   })
 
 bookedclass1.save()

@@ -23,7 +23,7 @@ end
 post '/bookedclasses' do # create
   @newclass = BookedClass.new( params )
   @newclass.save()
-  erb( :"bookedclasses/create" )
+  redirect to '/bookedclasses'
 end
 
 post '/bookedclasses/:id/delete' do
