@@ -16,16 +16,16 @@
   <br>
   <label for="gender">Gender:</label>
 
-  <input type="radio" name="gender" value="Male" <%="checked" if @member.gender == "Male" %>/> Male
-  <input type="radio" name="gender" value="Female"<%="checked" if @member.gender == "Female" %>/> Female
-  <input type="radio" name="gender" value="Other"<%="checked" if @member.gender == "Other" %>/> Other
+  <input type="radio" name="gender" value="Male" <%="checked" if @member.gender == "Male" %>/> <label>Male</label>
+  <input type="radio" name="gender" value="Female"<%="checked" if @member.gender == "Female" %>/> <label>Female</label>
+  <input type="radio" name="gender" value="Other"<%="checked" if @member.gender == "Other" %>/> <label>Other</label>
 
   <br>
   <br>
   <div class="radio">
   <label for="membership_category">Membership Category:</label>
-  <input type="radio" name="membership_category" value="Premium" <%="checked" if @member.membership_category == "Premium" %>/> Premium
-  <input type="radio" name="membership_category" value="Basic"<%="checked" if @member.membership_category == "Basic" %>/> Basic
+  <input type="radio" name="membership_category" value="Premium" <%="checked" if @member.membership_category == "Premium" %>/> <label>Premium</label>
+  <input type="radio" name="membership_category" value="Basic"<%="checked" if @member.membership_category == "Basic" %>/> <label>Basic</label>
   </div>
   <br>
   <br>

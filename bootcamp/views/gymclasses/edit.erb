@@ -28,8 +28,8 @@
 <br>
 <label for="member_tier">Gender:</label>
 
-  <input type="radio" name="member_tier" value="Premium" <%="checked" if @gymclass.member_tier == "Premium" %>> Premium
-  <input type="radio" name="member_tier" value="Basic"<%="checked" if @gymclass.member_tier == "Basic" %>> Basic
+  <input type="radio" name="member_tier" value="Premium" <%="checked" if @gymclass.member_tier == "Premium" %>><label>Premium</label>
+  <input type="radio" name="member_tier" value="Basic"<%="checked" if @gymclass.member_tier == "Basic" %>><label> Basic</label>
 <br>
   <input type="submit" value="Submit updated class details">
 
