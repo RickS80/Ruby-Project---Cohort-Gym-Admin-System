@@ -10,11 +10,18 @@
 
 <h3>Members Booked on Class:</h3>
 
-<ul>
-  <% @gymclass.members.each do |member| %>
-  <li><%= member.name %></li>
-  <% end %>
-</ul>
+<table>
+  <tr>
+    <th>Member Name</th>
+  </tr>
+  <tr>
+    <% @gymclass.members.each do |member| %>
+  <td>
+    <%= member.name %>
+  </td>
+  </tr>
+    <% end %>
+</table>
 
 
 <form action="/gymclasses/<%= @gymclass.id %>/edit"><input type="submit" value="Edit Class Details"></form>
