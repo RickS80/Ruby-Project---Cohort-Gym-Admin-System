@@ -1,6 +1,7 @@
 require_relative('../db/sql_runner')
 require_relative('member')
 require_relative('gymclass')
+require( 'pry-byebug' )
 
 class BookedClass
 
@@ -107,11 +108,18 @@ attr_reader :id, :member_id, :gymclass_id
   end
 
   def double_booking
-    @gymclass.members.each do |member|
-      if @newclass.member_name == member
+    BookedClass.all.each do |booking|
+      if booking.member_id == @member_id && booking.gymclass_id == @gymclass_id
         return true
-      else false
-    end 
+      elsif booking.member_id != @member_id || booking.gymclass_id != @gymclass_id
+        return false
+      end
+    end
+
   end
+
+
+
+
 
 end
