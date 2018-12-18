@@ -1,5 +1,6 @@
 require_relative('../db/sql_runner')
 require_relative('member')
+require 'date'
 
 class GymClass
   attr_reader :id
@@ -73,7 +74,16 @@ class GymClass
     user_data.map {|member| Member.new(member)}
   end
 
+  def date_convert
+    sql = "SELECT class_date FROM gymclasses
+    WHERE id = $1"
+    values = [@id]
+    database_date = SqlRunner.run(sql, values)[0]["class_date"]
+    parsed_date = Date.parse(database_date)
+    # binding.pry
+    parsed_date.strftime('%d %b %y')
 
+  end
 
 
 end

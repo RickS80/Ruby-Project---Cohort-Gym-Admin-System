@@ -108,7 +108,7 @@ member9 = Member.new({
   "last_name" => "Kelly",
   "age" => 30,
   "gender" => "Female",
-  "membership_category" => "Basic",
+  "membership_category" => "Premium",
   "picture_url" => "",
   "email_address" => "someone@codeclan.com",
   "tel_number" => "07771234567",
@@ -192,7 +192,7 @@ member16 = Member.new({
   "last_name" => "Mirza",
   "age" => 30,
   "gender" => "Female",
-  "membership_category" => "Basic",
+  "membership_category" => "Premium",
   "picture_url" => "",
   "email_address" => "someone@codeclan.com",
   "tel_number" => "07771234567",
@@ -216,7 +216,7 @@ member18 = Member.new({
   "last_name" => "Simon",
   "age" => 30,
   "gender" => "Female",
-  "membership_category" => "Basic",
+  "membership_category" => "Premium",
   "picture_url" => "",
   "email_address" => "someone@codeclan.com",
   "tel_number" => "07771234567",
@@ -228,7 +228,7 @@ member19 = Member.new({
   "last_name" => "Venditti",
   "age" => 30,
   "gender" => "Male",
-  "membership_category" => "Basic",
+  "membership_category" => "Premium",
   "picture_url" => "",
   "email_address" => "someone@codeclan.com",
   "tel_number" => "07771234567",
@@ -303,24 +303,103 @@ gymclass3 = GymClass.new({
   "gymclass_name" => "Individual",
   "instructor" => "Del",
   "capacity" => 1,
-  "class_date" => "2018-12-20",
+  "class_date" => "2018-12-21",
   "schedule" => "1100-1200",
   "member_tier" => "Basic"
   })
 
-  gymclass4 = GymClass.new({
-    "gymclass_name" => "Zumba",
-    "instructor" => "Sian",
-    "capacity" => 5,
-    "class_date" => "2018-12-20",
-    "schedule" => "0900-1000",
-    "member_tier" => "Basic"
-    })
+gymclass4 = GymClass.new({
+  "gymclass_name" => "Zumba",
+  "instructor" => "Sian",
+  "capacity" => 5,
+  "class_date" => "2018-12-20",
+  "schedule" => "0900-1000",
+  "member_tier" => "Basic"
+  })
+
+gymclass5 = GymClass.new({
+  "gymclass_name" => "Yoga",
+  "instructor" => "Colin",
+  "capacity" => 5,
+  "class_date" => "2018-12-23",
+  "schedule" => "1300-1400",
+  "member_tier" => "Basic"
+  })
+
+gymclass6 = GymClass.new({
+  "gymclass_name" => "Bodypump",
+  "instructor" => "Alex",
+  "capacity" => 5,
+  "class_date" => "2018-12-20",
+  "schedule" => "0900-1000",
+  "member_tier" => "Basic"
+  })
+
+gymclass7 = GymClass.new({
+  "gymclass_name" => "Individual",
+  "instructor" => "Del",
+  "capacity" => 1,
+  "class_date" => "2018-12-21",
+  "schedule" => "1200-1300",
+  "member_tier" => "Premium"
+  })
+
+gymclass8 = GymClass.new({
+  "gymclass_name" => "Yoga",
+  "instructor" => "Sian",
+  "capacity" => 3,
+  "class_date" => "2018-12-22",
+  "schedule" => "1500-1600",
+  "member_tier" => "Basic"
+  })
+
+gymclass9 = GymClass.new({
+  "gymclass_name" => "Bodypump",
+  "instructor" => "Colin",
+  "capacity" => 7,
+  "class_date" => "2018-12-20",
+  "schedule" => "1300-1400",
+  "member_tier" => "Premium"
+  })
+
+gymclass10 = GymClass.new({
+"gymclass_name" => "Spin",
+"instructor" => "Alex",
+"capacity" => 2,
+"class_date" => "2018-12-21",
+"schedule" => "1400-1500",
+"member_tier" => "Basic"
+})
+
+gymclass10 = GymClass.new({
+"gymclass_name" => "Zumba",
+"instructor" => "Sian",
+"capacity" => 4,
+"class_date" => "2018-12-20",
+"schedule" => "0900-1000",
+"member_tier" => "Basic"
+})
+
+gymclass10 = GymClass.new({
+  "gymclass_name" => "Spin",
+  "instructor" => "Del",
+  "capacity" => 3,
+  "class_date" => "2018-12-20",
+  "schedule" => "0900-1000",
+  "member_tier" => "Premium"
+  })
 
 gymclass1.save()
 gymclass2.save()
 gymclass3.save()
 gymclass4.save()
+gymclass5.save()
+gymclass6.save()
+gymclass7.save()
+gymclass8.save()
+gymclass9.save()
+gymclass10.save()
+
 
 bookedclass1 = BookedClass.new({
   "member_id" => member1.id,
@@ -339,13 +418,38 @@ bookedclass3 = BookedClass.new({
 
 bookedclass4 = BookedClass.new({
   "member_id" => member13.id,
+  "gymclass_id" => gymclass9.id
+  })
+
+bookedclass5 = BookedClass.new({
+  "member_id" => member11.id,
+  "gymclass_id" => gymclass7.id
+  })
+
+bookedclass6 = BookedClass.new({
+  "member_id" => member7.id,
+  "gymclass_id" => gymclass8.id
+  })
+
+bookedclass7 = BookedClass.new({
+  "member_id" => member9.id,
+  "gymclass_id" => gymclass10.id
+  })
+
+bookedclass8 = BookedClass.new({
+  "member_id" => member5.id,
   "gymclass_id" => gymclass4.id
   })
+
 
 bookedclass1.save()
 bookedclass2.save()
 bookedclass3.save()
 bookedclass4.save()
+bookedclass5.save()
+bookedclass6.save()
+bookedclass7.save()
+bookedclass8.save()
 #
 # binding.pry
 # nil

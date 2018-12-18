@@ -76,6 +76,10 @@ attr_reader :id, :member_id, :gymclass_id
     GymClass.find(@gymclass_id).class_date
   end
 
+  def converted_gym_class_date
+    GymClass.find(@gymclass_id).date_convert
+  end
+
   def self.attendees(gymclass_id )
     sql = "SELECT * FROM bookedclasses
     WHERE gymclass_id = $1"

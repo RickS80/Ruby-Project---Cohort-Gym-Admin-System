@@ -15,11 +15,11 @@
   </tr>
   <% for gymclass in @gymclasses %>
   <tr>
-    <td align = "center"><%= gymclass.gymclass_name %></td>
+    <td align = "left"><%= gymclass.gymclass_name %></td>
     <td align = "center"><%= gymclass.capacity %></td>
     <td align = "center"><%= gymclass.capacity - BookedClass.attendees(gymclass.id) %></td>
     <td align = "center"><%= gymclass.instructor %></td>
-    <td align = "center"><%= gymclass.class_date %></td>
+    <td align = "center"><%= gymclass.date_convert %></td>
     <td align = "center"><%= gymclass.schedule %></td>
     <td align = "center"><%= gymclass.member_tier %></td>
     <td><form action="/gymclasses/<%= gymclass.id %>"><input type="submit" value="Class Details"></form></td>
@@ -51,7 +51,7 @@
   <label for="gym_select">Gym Class:</label>
     <select type="number" name="gymclass_id" id="gym_select">
       <% @gymclasses.each do |gymclass| %>
-    <option value=<%= gymclass.id%>> <%= gymclass.gymclass_name%> / <%=  gymclass.class_date%> / <%=  gymclass.schedule%></option>
+    <option value=<%= gymclass.id%>> <%= gymclass.gymclass_name%> / <%=  gymclass.date_convert%> / <%=  gymclass.schedule%></option>
       <%end%>
 </select>
 

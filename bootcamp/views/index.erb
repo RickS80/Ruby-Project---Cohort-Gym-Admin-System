@@ -73,7 +73,7 @@
       <br>
       <select type="number" name="gymclass_id" id="gym_select">
         <% @gymclasses.each do |gymclass| %>
-        <option value=<%= gymclass.id%>> <%= gymclass.gymclass_name%> <%=  gymclass.class_date%> <%=  gymclass.schedule%></option>
+        <option value=<%= gymclass.id%>> <%= gymclass.gymclass_name%> / <%=  gymclass.date_convert%> / <%=  gymclass.schedule%></option>
         <%end%>
       </select>
 
@@ -100,7 +100,7 @@
       <tr>
         <td align = "center"><%= gymclass.gymclass_name %></td>
         <td align = "center"><%= gymclass.capacity - BookedClass.attendees(gymclass.id) %></td>
-        <td align = "center"><%= gymclass.class_date %></td>
+        <td align = "center"><%= gymclass.date_convert %></td>
 
 
       </tr>
