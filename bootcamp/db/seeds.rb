@@ -1,9 +1,11 @@
 require_relative('../models/member')
 require_relative('../models/gymclass')
 require_relative('../models/bookedclass')
+require_relative('../models/instructor')
 require("pry-byebug")
 
 BookedClass.delete_all
+Instructor.delete_all
 Member.delete_all
 GymClass.delete_all
 
@@ -450,6 +452,31 @@ bookedclass5.save()
 bookedclass6.save()
 bookedclass7.save()
 bookedclass8.save()
+
+instructor1 = Instructor.new({
+  "instructor_name" => "Colin",
+  "mantra" => "The best activities for your health are pumping and humping - Arnold Schwarzneggar "
+})
+
+instructor2 = Instructor.new({
+  "instructor_name" => "Alex",
+  "mantra" => "The more you sweat in training, the less you bleed in combat - Navy Seals "
+})
+
+instructor3 = Instructor.new({
+  "instructor_name" => "Del",
+  "mantra" => "Pain is temporary. Quitting lasts forever - Lance Armstrong "
+})
+
+instructor4 = Instructor.new({
+  "instructor_name" => "Sian",
+  "mantra" => "To be number one, you have to train like you’re number two - Maurice Green "
+})
+
+instructor1.save()
+instructor2.save()
+instructor3.save()
+instructor4.save()
 #
 # binding.pry
 # nil

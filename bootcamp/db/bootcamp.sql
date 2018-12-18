@@ -1,6 +1,8 @@
 DROP TABLE bookedclasses;
-DROP TABLE members;
 DROP TABLE gymclasses;
+DROP TABLE instructors;
+DROP TABLE members;
+
 
 CREATE TABLE members (
   id SERIAL8 primary key,
@@ -15,6 +17,12 @@ CREATE TABLE members (
   gdpr VARCHAR(255)
 );
 
+CREATE TABLE instructors(
+  id SERIAL8 primary key,
+  instructor_name VARCHAR(255),
+  mantra VARCHAR(255)
+);
+
 CREATE TABLE gymclasses(
   id SERIAL8 primary key,
   gymclass_name VARCHAR(255),
@@ -24,6 +32,8 @@ CREATE TABLE gymclasses(
   schedule VARCHAR(255),
   member_tier VARCHAR(255)
 );
+
+
 
 CREATE TABLE bookedclasses(
   id SERIAL8 primary key,

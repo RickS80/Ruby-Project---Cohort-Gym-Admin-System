@@ -1,0 +1,18 @@
+<hr>
+<h2>Instructors</h2>
+<hr>
+
+<% for instructor in @instructors %>
+<img src="/Images/<%= instructor.instructor_name %>.png" alt = "image" style="width:128px;height:128px;" >
+  <h2><%= instructor.instructor_name%></h2>
+
+  <h3>"<%= instructor.mantra%>"</h3>
+
+
+
+<hr>
+
+
+
+
+<%end%>
