@@ -71,7 +71,7 @@ img {
 
 div.container {
   width: 100%;
-  border: 2px solid white;
+  /* border: 2px solid white; */
 }
 
 div.box1 {
@@ -89,8 +89,8 @@ div.box2 {
   width: 40%;
   border: 2 px solid white;
   float: left;
-  border-style: solid;
-  border-color: white;
+  /* border-style: solid; */
+  /* border-color: white; */
   padding-left: 10px;
 }
 
@@ -99,8 +99,8 @@ div.box3 {
   width: 35%;
   border: 2 px solid white;
   float: left;
-  border-style: solid;
-  border-color: white;
+  /* border-style: solid; */
+  /* border-color: white; */
   padding-left: 10px;
 
 }

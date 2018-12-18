@@ -42,7 +42,7 @@
 
   <select type="number" name="member_id" id="member_select">
   <% @members.each do |member| %>
-    <option value=<%= member.id %>> <%= member.name %></option>
+    <option value=<%= member.id %>> <%= member.name %> (<%= member.membership_category%>)</option>
   <% end %>
   </select>
   <br>
@@ -51,7 +51,7 @@
   <label for="gym_select">Gym Class:</label>
     <select type="number" name="gymclass_id" id="gym_select">
       <% @gymclasses.each do |gymclass| %>
-    <option value=<%= gymclass.id%>> <%= gymclass.gymclass_name%> <%=  gymclass.class_date%> <%=  gymclass.schedule%></option>
+    <option value=<%= gymclass.id%>> <%= gymclass.gymclass_name%> / <%=  gymclass.class_date%> / <%=  gymclass.schedule%></option>
       <%end%>
 </select>
 
