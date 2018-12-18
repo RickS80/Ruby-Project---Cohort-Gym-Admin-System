@@ -36,6 +36,10 @@ th {
   height: 40px;
 }
 
+td[target= "0"] {
+  background-color: red;
+}
+
 img {
     image-orientation: from-image;
 }
