@@ -1,36 +1,64 @@
 <hr>
-<h2>Edit <%= @gymclass.gymclass_name %></h2>
+<h2>Edit <%= @gymclass.gymclass_name %> Class</h2>
 <hr>
 <form method="post" action="/gymclasses/<%= @gymclass.id %>">
 
-<label for="gymclass_name">Name:</label>
-<input type="text" name="gymclass_name"id="gymclass_name" value ="<%= @gymclass.gymclass_name%>" />
-<label for="instructor_select">Instructor:</label>
-<select type="text" name="instructor" id ="instructor">>
-<option value="Alex">Alex</option>
-<option value="Colin">Colin</option>
-<option value="Del">Del</option>
-<option value="Sian">Sian</option>
-</select>
-<br>
-<br>
+  <label for="gymclass_name">Name:</label>
+  <select type="text" name="gymclass_name" id ="gymclass_name">
+    <option value="Bodypump" <%="selected" if @gymclass.gymclass_name == "Bodypump"%>>Bodypump</option>
+    <option value="Individual" <%= "selected" if @gymclass.gymclass_name == "Individual"%>>Individual</option>
+    <option value="Spin" <%="selected" if @gymclass.gymclass_name == "Spin" %>>Spin</option>
+    <option value="Yoga" <%="selected" if @gymclass.gymclass_name == "Yoga" %>>Yoga</option>
+    <option value="Zumba" <%="selected" if @gymclass.gymclass_name == "Zumba" %>>Zumba</option>
+  </select>
+  <br>
+  <br>
+  <label for="instructor">Instructor:</label>
+  <select type="text" name="instructor" id ="instructor" value ="<%= @gymclass.instructor%>">
+    <option value="Alex" <%="selected" if @gymclass.instructor == "Alex"%>>Alex</option>
+    <option value="Colin" <%="selected" if @gymclass.instructor == "Colin"%>>Colin</option>
+    <option value="Del" <%="selected" if @gymclass.instructor == "Del"%>>Del</option>
+    <option value="Sian" <%="selected" if @gymclass.instructor == "Sian"%>>Sian</option>
+  </select>
+  <br>
+  <br>
   <label for="capacity">Capacity:</label>
-    <input type="number" name="capacity" id="capacity" value ="<%= @gymclass.capacity%>"/>
-<br>
-<br>
-  <label for="start_time">Start Time:</label>
-  <input type="text" name="start_time" id="start_time" value ="<%= @gymclass.start_time%>"/>
-<br>
-<br>
-  <label for="end_time">End Time:</label>
-  <input type="text" name="end_time" id="end_time" value ="<%= @gymclass.end_time%>"/>
-<br>
-<br>
-<label for="member_tier">Gender:</label>
+  <select type="number" name="capacity" id="capacity" value ="<%= @gymclass.capacity%>">
+    <option value="1" <%="selected" if @gymclass.capacity == 1 %>>1</option>
+    <option value="2" <%="selected" if @gymclass.capacity == 2 %>>2</option>
+    <option value="3" <%="selected" if @gymclass.capacity == 3 %>>3</option>
+    <option value="4" <%="selected" if @gymclass.capacity == 4 %>>4</option>
+    <option value="5" <%="selected" if @gymclass.capacity == 5 %>>5</option>
+    <option value="6" <%="selected" if @gymclass.capacity == 6 %>>6</option>
+    <option value="7" <%="selected" if @gymclass.capacity == 7 %>>7</option>
+    <option value="8" <%="selected" if @gymclass.capacity == 8 %>>8</option>
+  </select>
+  <br>
+  <br>
+  <label for="class_date">Start Time:</label>
+  <input type="date" name="class_date" id="class_date" value="<%= @gymclass.class_date%>"/>
+  <br>
+  <br>
+  <label for="schedule">End Time:</label>
+  <select type="text" name="schedule" id="schedule" value="<%= @gymclass.schedule%>">
+    <option value="0900-1000" <%="selected" if @gymclass.schedule == "0900-1000"%>>0900-1000</option>
+    <option value="1000-1100" <%="selected" if @gymclass.schedule == "1000-1100"%>>1000-1100</option>
+    <option value="1100-1200" <%="selected" if @gymclass.schedule == "1100-1200"%>>1100-1200</option>
+    <option value="1200-1300" <%="selected" if @gymclass.schedule == "1200-1300"%>>1200-1300</option>
+    <option value="1300-1400" <%="selected" if @gymclass.schedule == "1300-1400"%>>1300-1400</option>
+    <option value="1400-1500" <%="selected" if @gymclass.schedule == "1400-1500"%>>1400-1500</option>
+    <option value="1500-1600" <%="selected" if @gymclass.schedule == "1500-1600"%>>1500-1600</option>
+    <option value="1600-1700" <%="selected" if @gymclass.schedule == "1600-1700"%>>1600-1700</option>
+  </select>
+  <br>
+  <br>
+  <label for="member_tier">Gender:</label>
 
   <input type="radio" name="member_tier" value="Premium" <%="checked" if @gymclass.member_tier == "Premium" %>><label>Premium</label>
   <input type="radio" name="member_tier" value="Basic"<%="checked" if @gymclass.member_tier == "Basic" %>><label> Basic</label>
-<br>
+  <br>
+  <br>
+  <br>
   <input type="submit" value="Submit updated class details">
 
 </form>

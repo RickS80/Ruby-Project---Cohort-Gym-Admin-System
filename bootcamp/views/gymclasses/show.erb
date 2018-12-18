@@ -3,8 +3,8 @@
 <hr>
 <p>Instructor: <%= @gymclass.instructor %></p>
 <p>Capacity: <%= @gymclass.capacity %></p>
-<p>Start Time: <%= @gymclass.start_time %></p>
-<p>End Time: <%= @gymclass.end_time %></p>
+<p>Date: <%= @gymclass.class_date %></p>
+<p>Schedule: <%= @gymclass.schedule %></p>
 <p>Membership Tier: <%= @gymclass.member_tier %> </p>
 
 
@@ -22,6 +22,8 @@
   </tr>
     <% end %>
 </table>
+<br>
+<br>
 
 
 <form action="/gymclasses/<%= @gymclass.id %>/edit"><input type="submit" value="Edit Class Details"></form>

@@ -69,7 +69,11 @@ attr_reader :id, :member_id, :gymclass_id
   end
 
   def gym_class_start_time
-    GymClass.find(@gymclass_id).start_time
+    GymClass.find(@gymclass_id).schedule
+  end
+
+  def gym_class_date
+    GymClass.find(@gymclass_id).class_date
   end
 
   def self.attendees(gymclass_id )

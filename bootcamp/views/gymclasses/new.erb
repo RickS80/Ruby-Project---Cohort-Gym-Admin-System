@@ -4,43 +4,62 @@
 
 <form method="post" action="/gymclasses">
 
-<label for="gymclass_name">Class Type:</label>
-    <select type="text" name="gymclass_name" id ="gymclass_name">
-      <option value="Bodypump">Bodypump</option>
-      <option value="Individual">Individual</option>
-      <option value="Spin">Spin</option>
-      <option value="Yoga">Yoga</option>
-      <option value="Zumba">Zumba</option>
-    </select>
-<br>
-<br>
-<label for="instructor">Instructor:</label>
-<select type="text" name="instructor" id ="instructor">
-<option value="Alex">Alex</option>
-<option value="Colin">Colin</option>
-<option value="Del">Del</option>
-<option value="Sian">Sian</option>
-</select>
-<br>
-<br>
+  <label for="gymclass_name">Class Type:</label>
+  <select type="text" name="gymclass_name" id ="gymclass_name">
+    <option value="Bodypump">Bodypump</option>
+    <option value="Individual">Individual</option>
+    <option value="Spin">Spin</option>
+    <option value="Yoga">Yoga</option>
+    <option value="Zumba">Zumba</option>
+  </select>
+  <br>
+  <br>
+  <label for="instructor">Instructor:</label>
+  <select type="text" name="instructor" id ="instructor">
+    <option value="Alex">Alex</option>
+    <option value="Colin">Colin</option>
+    <option value="Del">Del</option>
+    <option value="Sian">Sian</option>
+  </select>
+  <br>
+  <br>
   <label for="capacity">Capacity:</label>
-    <input type="number" name="capacity" id="capacity"/>
-<br>
-<br>
-  <label for="start_time">Start Time:</label>
-  <input type="datetime-local" name="start_time" id="start_time"/>
-<br>
-<br>
-  <label for="end_time">End Time:</label>
-  <input type="datetime-local" name="end_time" id="end_time"/>
+  <select type="number" name="capacity" id="capacity">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+  </select>
+  <br>
+  <br>
+  <label for="class_date">Start Time:</label>
+  <input type="date" name="class_date" id="class_date"/>
+  <br>
+  <br>
+  <label for="schedule">Schedule:</label>
+  <select type="text" name="schedule" id ="schedule">
+    <option value="0900-1000">0900-1000</option>
+    <option value="1000-1100">1000-1100</option>
+    <option value="1100-1200">1100-1200</option>
+    <option value="1200-1300">1200-1300</option>
+    <option value="1300-1400">1300-1400</option>
+    <option value="1400-1500">1400-1500</option>
+    <option value="1500-1600">1500-1600</option>
+    <option value="1600-1700">1600-1700</option>
+  </select>
+
   <br>
   <br>
   <label for="member_tier">Membership Tier:</label>
   <input type="radio" name="member_tier" value="Premium"/> <label>Premium</label>
   <input type="radio" name="member_tier" value="Basic"/> <label>Basic</label>
-<br>
-<br>
-<br>
+  <br>
+  <br>
+  <br>
   <input type="submit" value="Create new gym class">
 
 </form>

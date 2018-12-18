@@ -285,8 +285,8 @@ gymclass1 = GymClass.new({
   "gymclass_name" => "Bodypump",
   "instructor" => "Colin",
   "capacity" => 5,
-  "start_time" => "2018-12-20 10:30:00",
-  "end_time" => "2018-12-20 11:30:00",
+  "class_date" => "2018-12-20",
+  "schedule" => "1500-1600",
   "member_tier" => "Premium"
   })
 
@@ -294,8 +294,8 @@ gymclass2 = GymClass.new({
   "gymclass_name" => "Spin",
   "instructor" => "Alex",
   "capacity" => 5,
-  "start_time" => "2018-12-20 13:30:00",
-  "end_time" => "2018-12-20 14:30:00",
+  "class_date" => "2018-12-20",
+  "schedule" => "1000-1100",
   "member_tier" => "Premium"
   })
 
@@ -303,8 +303,8 @@ gymclass3 = GymClass.new({
   "gymclass_name" => "Individual",
   "instructor" => "Del",
   "capacity" => 1,
-  "start_time" => "2018-12-20 14:30:00",
-  "end_time" => "2018-12-20 15:30:00",
+  "class_date" => "2018-12-20",
+  "schedule" => "1100-1200",
   "member_tier" => "Basic"
   })
 
@@ -312,8 +312,8 @@ gymclass3 = GymClass.new({
     "gymclass_name" => "Zumba",
     "instructor" => "Sian",
     "capacity" => 5,
-    "start_time" => "2018-12-21 14:30:00",
-    "end_time" => "2018-12-21 15:30:00",
+    "class_date" => "2018-12-20",
+    "schedule" => "0900-1000",
     "member_tier" => "Basic"
     })
 
@@ -333,12 +333,12 @@ bookedclass2 = BookedClass.new({
   })
 
 bookedclass3 = BookedClass.new({
-  "member_id" => member2.id,
+  "member_id" => member15.id,
   "gymclass_id" => gymclass3.id
   })
 
 bookedclass4 = BookedClass.new({
-  "member_id" => member2.id,
+  "member_id" => member13.id,
   "gymclass_id" => gymclass4.id
   })
 
