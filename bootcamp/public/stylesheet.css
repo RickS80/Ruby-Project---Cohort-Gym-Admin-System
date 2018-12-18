@@ -69,6 +69,42 @@ img {
   color: white;
 }
 
+div.container {
+  width: 100%;
+  border: 2px solid white;
+}
+
+div.box1 {
+  box-sizing: border-box;
+  width: 25%;
+  border: 2 px solid white;
+  float: left;
+  border-style: solid;
+  border-color: white;
+  padding-left: 10px;
+}
+
+div.box2 {
+  box-sizing: border-box;
+  width: 40%;
+  border: 2 px solid white;
+  float: left;
+  border-style: solid;
+  border-color: white;
+  padding-left: 10px;
+}
+
+div.box3 {
+  box-sizing: border-box;
+  width: 35%;
+  border: 2 px solid white;
+  float: left;
+  border-style: solid;
+  border-color: white;
+  padding-left: 10px;
+
+}
+
 
 #display-types {
   font: 22px Helvetica;

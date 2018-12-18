@@ -25,12 +25,12 @@ post '/bookedclasses' do # create
   @bookedclasses = BookedClass.all()
   @newclass = BookedClass.new( params )
   # binding.pry
-    if @newclass.check_membership_tier == true && @newclass.check_availability == true && @newclass.double_booking == false
+    if @newclass.check_membership_tier && @newclass.check_availability && !@newclass.double_booking
       @newclass.save()
       redirect to '/bookedclasses'
-    elsif @newclass.check_membership_tier == true && @newclass.check_availability == true && @newclass.double_booking == true
+    elsif @newclass.check_membership_tier && @newclass.check_availability && @newclass.double_booking
       erb(:"bookedclasses/double_booking")
-    elsif @newclass.check_membership_tier == true && @newclass.check_availability == false && @newclass.double_booking == false
+    elsif @newclass.check_membership_tier && !@newclass.check_availability && !@newclass.double_booking
       erb(:"bookedclasses/insufficient_space")
     else
       erb(:"bookedclasses/tier_mismatch")

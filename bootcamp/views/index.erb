@@ -1,3 +1,114 @@
 <hr>
 <h1>Welcome to Bootcamp!</h1>
-<hr> 
+
+
+<div class="container">
+
+  <div class="box3">
+    <h3>New Member</h3>
+    <form method="post" action="/members">
+
+      <label for="first_name">First Name:</label>
+      <input type="text" name="first_name" id="first_name" />
+      <br>
+      <br>
+      <label for="last_name">Last Name:</label>
+      <input type="text" name="last_name" id="last_name" />
+      <br>
+      <br>
+      <label for="age-field">Age:</label>
+      <input type="number" name="age" id="age-field"/>
+      <br>
+      <br>
+      <label for="gender">Gender:</label>
+      <input type="radio" name="gender" value="Male"/> <label>Male</label>
+      <input type="radio" name="gender" value="Female"/> <label>Female</label>
+      <input type="radio" name="gender" value="Other"/> <label>Other</label>
+      <br>
+      <br>
+      <label for="email_address">Email Address:</label>
+      <input type="email" name="email_address" id="email_address" />
+      <br>
+      <br>
+      <label for="tel_number">Telephone Number:</label>
+      <input type="tel_number" name="tel_number" id="tel_number" />
+      <br>
+      <br>
+      <label for="gdpr">Do you agree for us to hold your details under GDPR?:</label>
+      <input type="radio" name="gdpr" value="Agree"/> <label>Agree</label>
+      <input type="radio" name="gdpr" value="Disagree"/> <label>Disagree</label>
+      <br>
+      <br>
+      <label for="membership_category">Membership Category:</label>
+      <input type="radio" name="membership_category" value="Premium"/><label>Premium</label>
+      <input type="radio" name="membership_category" value="Basic"/> <label>Basic</label>
+      <br>
+      <br>
+      <br>
+      <input type="submit" value="Enroll Member">
+
+    </form>
+    <br>
+
+  </div>
+
+
+  <div class="box1">
+
+    <h3>Quickbook</h3>
+    <form method="post" action="/bookedclasses">
+
+      <label for="member_select">Member:</label>
+      <br>
+
+      <select type="number" name="member_id" id="member_select">
+        <% @members.each do |member| %>
+        <option value=<%= member.id %>> <%= member.name %></option>
+        <% end %>
+      </select>
+      <br>
+      <br>
+
+      <label for="gym_select">Class:</label>
+      <br>
+      <select type="number" name="gymclass_id" id="gym_select">
+        <% @gymclasses.each do |gymclass| %>
+        <option value=<%= gymclass.id%>> <%= gymclass.gymclass_name%> <%=  gymclass.class_date%> <%=  gymclass.schedule%></option>
+        <%end%>
+      </select>
+
+      <br>
+      <br>
+      <input type="submit" value="Book Class!">
+
+    </form>
+    <br>
+  </div>
+
+
+
+  <div class="box2">
+    <h3>Upcoming Classes</h3>
+    <table>
+      <tr>
+        <th>Class</th>
+        <th>Availability</th>
+        <th>Date</th>
+
+      </tr>
+      <% for gymclass in @gymclasses %>
+      <tr>
+        <td align = "center"><%= gymclass.gymclass_name %></td>
+        <td align = "center"><%= gymclass.capacity - BookedClass.attendees(gymclass.id) %></td>
+        <td align = "center"><%= gymclass.class_date %></td>
+
+
+      </tr>
+
+      <% end %>
+    </table>
+    <br>
+
+  </div>
+
+</div>

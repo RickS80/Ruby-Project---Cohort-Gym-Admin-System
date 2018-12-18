@@ -115,11 +115,11 @@ attr_reader :id, :member_id, :gymclass_id
     BookedClass.all.each do |booking|
       if booking.member_id == @member_id && booking.gymclass_id == @gymclass_id
         return true
-      elsif booking.member_id != @member_id || booking.gymclass_id != @gymclass_id
-        return false
+      # elsif booking.member_id != @member_id || booking.gymclass_id != @gymclass_id
+      #   return false
       end
     end
-
+    return false
   end
 
 
