@@ -1,9 +1,14 @@
 <hr>
 <h2>Member Info: <%= @member.name %></h2>
+<img src="/Images/<%= @member.name %>.jpg" alt = "image" style="width:128px;height:128px;">
 <hr>
 <p>Gender: <%= @member.gender %></p>
 <p>Age: <%= @member.age %></p>
+<p>Email: <%= @member.email_address %></p>
+<p>Phone: <%= @member.tel_number %></p></p>
+<p>GDPR: <%= @member.gdpr %></p>
 <p>Membership Category: <%= @member.membership_category %></p>
+
 
 
 <form action="/members/<%= @member.id %>/edit"><input type="submit" value="Edit Membership"></form>
@@ -17,11 +22,13 @@
   <tr>
     <th>Class</th>
     <th>Time</th>
+    <th>Cancel Class</th>
   </tr>
     <% @member.gymclasses.each do |gymclass| %>
   <tr>
     <td> <%= gymclass.gymclass_name %></td>
-    <td> <%= gymclass.start_time %></td>
+    <td align = "center"> <%= gymclass.start_time %></td>
+    <td align = "center"><form action="/bookedclasses/<%= gymclass.id %>/delete" method="POST"><input type="submit" value="Cancel Class"></form></td>
   </tr>
     <% end %>
 </table>

@@ -1,32 +1,45 @@
 <hr>
 <form method="post" action="/members">
 
-<h2>New Member</h2>
-<hr>
-<br>
+  <h2>New Member</h2>
+  <hr>
+  <br>
 
-<label for="first_name">First Name:</label>
+  <label for="first_name">First Name:</label>
   <input type="text" name="first_name" id="first_name" />
-<label for="last_name">Last Name:</label>
+  <label for="last_name">Last Name:</label>
   <input type="text" name="last_name" id="last_name" />
-<br>
-<br>
+  <br>
+  <br>
   <label for="age-field">Age:</label>
-    <input type="number" name="age" id="age-field"/>
-<br>
-<br>
+  <input type="number" name="age" id="age-field"/>
+  <br>
+  <br>
   <label for="gender">Gender:</label>
   <input type="radio" name="gender" value="Male"/> <label>Male</label>
   <input type="radio" name="gender" value="Female"/> <label>Female</label>
   <input type="radio" name="gender" value="Other"/> <label>Other</label>
-<br>
-<br>
+  <br>
+  <br>
+  <label for="email_address">Email Address:</label>
+  <input type="email" name="email_address" id="email_address" />
+  <br>
+  <br>
+  <label for="tel_number">Telephone Number:</label>
+  <input type="tel_number" name="tel_number" id="tel_number" />
+  <br>
+  <br>
+  <label for="gdpr">Do you agree for us to hold your details under GDPR?:</label>
+  <input type="radio" name="gdpr" value="Agree"/> <label>Agree</label>
+  <input type="radio" name="gdpr" value="Disagree"/> <label>Disagree</label>
+  <br>
+  <br>
   <label for="membership_category">Membership Category:</label>
   <input type="radio" name="membership_category" value="Premium"/><label>Premium</label>
   <input type="radio" name="membership_category" value="Basic"/> <label>Basic</label>
-<br>
-<br>
-<br>
+  <br>
+  <br>
+  <br>
   <input type="submit" value="Enroll Member">
 
 </form>

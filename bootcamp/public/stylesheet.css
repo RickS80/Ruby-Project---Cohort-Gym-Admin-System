@@ -35,6 +35,10 @@ th {
   height: 40px;
 }
 
+img {
+    image-orientation: from-image;
+}
+
 
 
 /* Add a black background color to the top navigation */

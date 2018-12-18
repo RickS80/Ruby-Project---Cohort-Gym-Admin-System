@@ -8,7 +8,11 @@ CREATE TABLE members (
   last_name VARCHAR(255),
   age INT2,
   gender VARCHAR(255),
-  membership_category VARCHAR(255)
+  membership_category VARCHAR(255),
+  picture_url VARCHAR(255),
+  email_address VARCHAR(255),
+  tel_number VARCHAR(255),
+  gdpr VARCHAR(255)
 );
 
 CREATE TABLE gymclasses(

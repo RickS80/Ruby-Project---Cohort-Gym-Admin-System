@@ -1,5 +1,6 @@
 <hr>
 <h2>Edit <%= @member.name %></h2>
+<img src="/Images/<%= @member.name %>.jpg" alt = "image" style="width:128px;height:128px;">
 <hr>
 <br>
 <form method="post" action="/members/<%= @member.id %>">
@@ -15,13 +16,27 @@
   <br>
   <br>
   <label for="gender">Gender:</label>
-
   <input type="radio" name="gender" value="Male" <%="checked" if @member.gender == "Male" %>/> <label>Male</label>
   <input type="radio" name="gender" value="Female"<%="checked" if @member.gender == "Female" %>/> <label>Female</label>
   <input type="radio" name="gender" value="Other"<%="checked" if @member.gender == "Other" %>/> <label>Other</label>
+  <br>
+  <br>
+  <label for="email_address">Email Address:</label>
+  <input type="email" name="email_address" id="email_address" value="<%=@member.email_address%>" />
+  <br>
+  <br>
+  <label for="tel_number">Telephone Number:</label>
+  <input type="tel_number" name="tel_number" id="tel_number" value="<%=@member.tel_number%>"/>
+  <br>
+  <br>
+  <label for="gdpr">Do you agree for us to hold your details under GDPR?:</label>
+  <input type="radio" name="gdpr" value="Agreed" <%="checked" if @member.gdpr == "Agree" %>/> <label>Agree</label>
+  <input type="radio" name="gdpr" value="Disagreed" <%="checked" if @member.gdpr == "Disagree" %>/> <label>Disagree</label>
+  <br>
+  <br>
+  <br>
 
-  <br>
-  <br>
+
   <div class="radio">
   <label for="membership_category">Membership Category:</label>
   <input type="radio" name="membership_category" value="Premium" <%="checked" if @member.membership_category == "Premium" %>/> <label>Premium</label>
