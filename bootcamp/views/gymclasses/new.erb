@@ -15,11 +15,10 @@
   <br>
   <br>
   <label for="instructor">Instructor:</label>
-  <select type="text" name="instructor" id ="instructor">
-    <option value="Alex">Alex</option>
-    <option value="Colin">Colin</option>
-    <option value="Del">Del</option>
-    <option value="Sian">Sian</option>
+  <select type="number" name="instructor_id" id ="instructor_id">
+    <% @instructors.each do |instructor| %>
+    <option value="<%= instructor.id%>"> <%= instructor.instructor_name%></option>
+    <%end%>
   </select>
   <br>
   <br>

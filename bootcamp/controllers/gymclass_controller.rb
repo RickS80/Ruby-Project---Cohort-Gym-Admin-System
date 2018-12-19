@@ -15,6 +15,7 @@ get '/gymclasses' do
 end
 
 get '/gymclasses/new' do
+  @instructors = Instructor.all()
   erb(:"gymclasses/new")
 end
 
@@ -31,6 +32,7 @@ end
 
 get '/gymclasses/:id/edit' do
   @gymclass = GymClass.find(params['id'])
+  @instructors = Instructor.all()
   erb(:"gymclasses/edit")
 end
 

@@ -14,12 +14,13 @@
   <br>
   <br>
   <label for="instructor">Instructor:</label>
-  <select type="text" name="instructor" id ="instructor" value ="<%= @gymclass.instructor%>">
-    <option value="Alex" <%="selected" if @gymclass.instructor == "Alex"%>>Alex</option>
-    <option value="Colin" <%="selected" if @gymclass.instructor == "Colin"%>>Colin</option>
-    <option value="Del" <%="selected" if @gymclass.instructor == "Del"%>>Del</option>
-    <option value="Sian" <%="selected" if @gymclass.instructor == "Sian"%>>Sian</option>
+  <select type="number" name="instructor_id" id ="instructor_id">
+    <% @instructors.each do |instructor| %>
+    <option value="<%= instructor.id%>" <%="selected" if instructor.id == @gymclass.instructor_id%>><%= instructor.instructor_name%></option>
+
+    <%end%>
   </select>
+
   <br>
   <br>
   <label for="capacity">Capacity:</label>

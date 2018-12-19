@@ -283,9 +283,34 @@ member19.save()
 member20.save()
 member21.save()
 
+instructor1 = Instructor.new({
+  "instructor_name" => "Colin",
+  "mantra" => "The best activities for your health are pumping and humping - Arnold Schwarzneggar "
+})
+
+instructor2 = Instructor.new({
+  "instructor_name" => "Alex",
+  "mantra" => "The more you sweat in training, the less you bleed in combat - Navy Seals "
+})
+
+instructor3 = Instructor.new({
+  "instructor_name" => "Del",
+  "mantra" => "Pain is temporary. Quitting lasts forever - Lance Armstrong "
+})
+
+instructor4 = Instructor.new({
+  "instructor_name" => "Sian",
+  "mantra" => "To be number one, you have to train like you’re number two - Maurice Green "
+})
+
+instructor1.save()
+instructor2.save()
+instructor3.save()
+instructor4.save()
+
 gymclass1 = GymClass.new({
   "gymclass_name" => "Bodypump",
-  "instructor" => "Colin",
+  "instructor_id" => instructor1.id,
   "capacity" => 5,
   "class_date" => "2018-12-20",
   "schedule" => "1500-1600",
@@ -294,7 +319,7 @@ gymclass1 = GymClass.new({
 
 gymclass2 = GymClass.new({
   "gymclass_name" => "Spin",
-  "instructor" => "Alex",
+  "instructor_id" => instructor2.id,
   "capacity" => 5,
   "class_date" => "2018-12-20",
   "schedule" => "1000-1100",
@@ -303,7 +328,7 @@ gymclass2 = GymClass.new({
 
 gymclass3 = GymClass.new({
   "gymclass_name" => "Individual",
-  "instructor" => "Del",
+  "instructor_id" => instructor3.id,
   "capacity" => 1,
   "class_date" => "2018-12-21",
   "schedule" => "1100-1200",
@@ -312,7 +337,7 @@ gymclass3 = GymClass.new({
 
 gymclass4 = GymClass.new({
   "gymclass_name" => "Zumba",
-  "instructor" => "Sian",
+  "instructor_id" => instructor4.id,
   "capacity" => 5,
   "class_date" => "2018-12-20",
   "schedule" => "0900-1000",
@@ -321,7 +346,7 @@ gymclass4 = GymClass.new({
 
 gymclass5 = GymClass.new({
   "gymclass_name" => "Yoga",
-  "instructor" => "Colin",
+  "instructor_id" => instructor1.id,
   "capacity" => 5,
   "class_date" => "2018-12-23",
   "schedule" => "1300-1400",
@@ -330,7 +355,7 @@ gymclass5 = GymClass.new({
 
 gymclass6 = GymClass.new({
   "gymclass_name" => "Bodypump",
-  "instructor" => "Alex",
+  "instructor_id" => instructor2.id,
   "capacity" => 5,
   "class_date" => "2018-12-20",
   "schedule" => "0900-1000",
@@ -339,7 +364,7 @@ gymclass6 = GymClass.new({
 
 gymclass7 = GymClass.new({
   "gymclass_name" => "Individual",
-  "instructor" => "Del",
+  "instructor_id" => instructor3.id,
   "capacity" => 1,
   "class_date" => "2018-12-21",
   "schedule" => "1200-1300",
@@ -348,7 +373,7 @@ gymclass7 = GymClass.new({
 
 gymclass8 = GymClass.new({
   "gymclass_name" => "Yoga",
-  "instructor" => "Sian",
+  "instructor_id" => instructor4.id,
   "capacity" => 3,
   "class_date" => "2018-12-22",
   "schedule" => "1500-1600",
@@ -357,7 +382,7 @@ gymclass8 = GymClass.new({
 
 gymclass9 = GymClass.new({
   "gymclass_name" => "Bodypump",
-  "instructor" => "Colin",
+  "instructor_id" => instructor1.id,
   "capacity" => 7,
   "class_date" => "2018-12-20",
   "schedule" => "1300-1400",
@@ -366,7 +391,7 @@ gymclass9 = GymClass.new({
 
 gymclass10 = GymClass.new({
 "gymclass_name" => "Spin",
-"instructor" => "Alex",
+"instructor_id" => instructor2.id,
 "capacity" => 2,
 "class_date" => "2018-12-21",
 "schedule" => "1400-1500",
@@ -375,7 +400,7 @@ gymclass10 = GymClass.new({
 
 gymclass10 = GymClass.new({
 "gymclass_name" => "Zumba",
-"instructor" => "Sian",
+"instructor_id" => instructor3.id,
 "capacity" => 4,
 "class_date" => "2018-12-20",
 "schedule" => "0900-1000",
@@ -384,7 +409,7 @@ gymclass10 = GymClass.new({
 
 gymclass10 = GymClass.new({
   "gymclass_name" => "Spin",
-  "instructor" => "Del",
+  "instructor_id" => instructor4.id,
   "capacity" => 3,
   "class_date" => "2018-12-20",
   "schedule" => "0900-1000",
@@ -453,30 +478,7 @@ bookedclass6.save()
 bookedclass7.save()
 bookedclass8.save()
 
-instructor1 = Instructor.new({
-  "instructor_name" => "Colin",
-  "mantra" => "The best activities for your health are pumping and humping - Arnold Schwarzneggar "
-})
 
-instructor2 = Instructor.new({
-  "instructor_name" => "Alex",
-  "mantra" => "The more you sweat in training, the less you bleed in combat - Navy Seals "
-})
-
-instructor3 = Instructor.new({
-  "instructor_name" => "Del",
-  "mantra" => "Pain is temporary. Quitting lasts forever - Lance Armstrong "
-})
-
-instructor4 = Instructor.new({
-  "instructor_name" => "Sian",
-  "mantra" => "To be number one, you have to train like you’re number two - Maurice Green "
-})
-
-instructor1.save()
-instructor2.save()
-instructor3.save()
-instructor4.save()
 #
 # binding.pry
 # nil

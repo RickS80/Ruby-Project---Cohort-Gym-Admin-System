@@ -109,6 +109,34 @@ div.box3 {
   padding-left: 10px;
 
 }
+div.box4 {
+  box-sizing: border-box;
+  width: 128px;
+  height: 128px;
+  border: 2 px solid white;
+  float: left;
+  border-style: solid;
+  border-color: white;
+  padding-left: 10px;
+}
+div.box5 {
+  box-sizing: border-box;
+  width: 60%;
+  border: 2px solid white;
+  float: left;
+  border-style: solid; */
+  border-color: white;
+  padding-left: 10px;
+}
+div.box6 {
+  box-sizing: border-box;
+  width: 20%;
+  border: 2 px solid white;
+  float: left;
+  border-style: solid;
+  border-color: white;
+  padding-left: 10px;
+}
 
 
 #display-types {

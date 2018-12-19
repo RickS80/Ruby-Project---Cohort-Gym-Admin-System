@@ -26,14 +26,12 @@ CREATE TABLE instructors(
 CREATE TABLE gymclasses(
   id SERIAL8 primary key,
   gymclass_name VARCHAR(255),
-  instructor VARCHAR(255),
+  instructor_id INT8 REFERENCES instructors(id) ON DELETE CASCADE,
   capacity INT8,
   class_date DATE,
   schedule VARCHAR(255),
   member_tier VARCHAR(255)
 );
-
-
 
 CREATE TABLE bookedclasses(
   id SERIAL8 primary key,
