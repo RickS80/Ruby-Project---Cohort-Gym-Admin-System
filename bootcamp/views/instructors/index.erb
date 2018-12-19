@@ -2,27 +2,34 @@
 <h2>Instructors</h2>
 <hr>
 
-<% for instructor in @instructors %>
-<!-- <div class="container"> -->
-<!-- <div class="box4"> -->
+<% @instructors.each do |instructor| %>
+
 <img src="/Images/<%= instructor.instructor_name %>.png" alt = "image" style="width:128px;height:128px;" >
 
-<!-- </div> -->
-
-<!-- <div class="box5"> -->
   <h2><%= instructor.instructor_name%></h2>
   <h3>"<%= instructor.mantra%>"</h3>
-<!-- </div> -->
 
-<!-- <div class="box6"> -->
-  <!-- <h2>Test</h2> -->
-  <!-- </div> -->
+  <table>
+    <tr>
+      <th>Class</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Class Details</th>
+    </tr>
+    <% instructor.inst_gymclasses.each do |gymclass|%>
+    <tr>
+
+      <td> <%= gymclass.gymclass_name%></td>
+      <td align = "center"> <%= gymclass.date_convert%></td>
+      <td align = "center"> <%= gymclass.schedule%></td>
+      <td align = "center"><form action="/gymclasses/<%= gymclass.id %>"><input type="submit" value="Class Details"></form></td>
+    </tr>
+    <%end%>
+  </table>
 
 
 
 
 
-
-<!-- </div> -->
 <hr>
 <%end%>

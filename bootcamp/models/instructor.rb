@@ -61,4 +61,25 @@ def save()
     SqlRunner.run( sql, values )
   end
 
+  def inst_gymclass_name
+    GymClass.find(@id).gymclass_name
+  end
+
+  def inst_class_date
+    GymClass.find(@id).class_date
+  end
+
+  def inst_schedule
+    GymClass.find(@id).schedule
+  end
+
+  def inst_gymclasses()
+    sql = "SELECT *
+    FROM gymclasses
+    WHERE instructor_id = $1"
+    values = [@id]
+    user_data = SqlRunner.run(sql, values)
+    user_data.map {|gymclass| GymClass.new(gymclass)}
+  end
+
 end
