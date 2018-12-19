@@ -14,6 +14,7 @@
       <th>Class</th>
       <th>Date</th>
       <th>Time</th>
+      <th>Attendees</th>
       <th>Class Details</th>
     </tr>
     <% instructor.inst_gymclasses.each do |gymclass|%>
@@ -22,6 +23,7 @@
       <td> <%= gymclass.gymclass_name%></td>
       <td align = "center"> <%= gymclass.date_convert%></td>
       <td align = "center"> <%= gymclass.schedule%></td>
+      <td align = "center"> <%= BookedClass.attendees(gymclass.id)%></td>
       <td align = "center"><form action="/gymclasses/<%= gymclass.id %>"><input type="submit" value="Class Details"></form></td>
     </tr>
     <%end%>
