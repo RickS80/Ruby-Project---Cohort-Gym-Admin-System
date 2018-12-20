@@ -64,6 +64,10 @@ class GymClass
     SqlRunner.run( sql, values )
   end
 
+  def instructor_title
+    Instructor.find(@instructor_id).instructor_name
+  end
+
   def members()
     sql = "SELECT members.*
     FROM members
@@ -85,9 +89,7 @@ class GymClass
     parsed_date.strftime('%d %b %y')
   end
 
-  def instructor_title
-    Instructor.find(@instructor_id).instructor_name
-  end
+
 
 
 end

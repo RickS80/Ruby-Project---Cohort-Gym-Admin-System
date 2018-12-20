@@ -1,5 +1,5 @@
 <hr>
-<h1>Welcome to Bootcamp!</h1>
+<h1>Cohort /ˈkəʊhɔːt/</h1>
 <hr>
 
 <div class="container">
@@ -40,6 +40,7 @@
       <br>
       <br>
       <label for="membership_category">Membership Category:</label>
+      <br>
       <input type="radio" name="membership_category" value="Premium"/><label>Premium</label>
       <input type="radio" name="membership_category" value="Basic"/> <label>Basic</label>
       <br>
@@ -63,7 +64,7 @@
 
       <select type="number" name="member_id" id="member_select">
         <% @members.each do |member| %>
-        <option value=<%= member.id %>> <%= member.name %></option>
+        <option value=<%= member.id %>> <%= member.name %> (<%= member.membership_category%>)</option>
         <% end %>
       </select>
       <br>
@@ -93,6 +94,7 @@
       <tr>
         <th>Class</th>
         <th>Availability</th>
+        <th>Tier</th>
         <th>Date</th>
 
       </tr>
@@ -100,6 +102,7 @@
       <tr>
         <td align = "center"><%= gymclass.gymclass_name %></td>
         <td align = "center"><%= gymclass.capacity - BookedClass.attendees(gymclass.id) %></td>
+        <td align = "center"><%= gymclass.member_tier %></td>
         <td align = "center"><%= gymclass.date_convert %></td>
 
 

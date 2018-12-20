@@ -8,7 +8,7 @@
     <th>Class</th>
     <th>Date</th>
     <th>Time</th>
-    <th>Cancel Class</th>
+    <th>Cancel</th>
   </tr>
   <% for bookedclass in @bookedclasses %>
   <tr>
@@ -16,7 +16,7 @@
     <td align = "center"><%= bookedclass.gym_class_name%></td>
     <td align = "center"><%= bookedclass.converted_gym_class_date%></td>
     <td align = "center"><%= bookedclass.gym_class_start_time%></td>
-    <td align = "center"><form action="/bookedclasses/<%= bookedclass.id %>/delete" method="POST"><input type="submit" value="Cancel Class"></form></td>
+    <td align = "center"><form action="/bookedclasses/<%= bookedclass.id %>/delete" method="POST"><input type="submit" value="Cancel Booking"></form></td>
   </tr>
   <% end %>
 </table>

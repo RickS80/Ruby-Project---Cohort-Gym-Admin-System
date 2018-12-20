@@ -127,7 +127,4 @@ attr_reader :id, :member_id, :gymclass_id
   end
 
 
-
-
-
 end

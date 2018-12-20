@@ -28,7 +28,7 @@
     <% @member.gymclasses.each do |gymclass| %>
   <tr>
     <td> <%= gymclass.gymclass_name %></td>
-    <td align = "center"> <%= gymclass.class_date%></td>
+    <td align = "center"> <%= gymclass.date_convert%></td>
     <td align = "center"> <%= gymclass.schedule%></td>
     <td align = "center"><form action="/bookedclasses/<%= gymclass.id %>/delete" method="POST"><input type="submit" value="Cancel Class"></form></td>
   </tr>
